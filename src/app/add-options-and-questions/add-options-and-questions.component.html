@@ -1,0 +1,19 @@
+<form [formGroup]="myForm" (ngSubmit)="onSumit(myForm.value)" novalidate>
+    <div formArrayName="addresses">
+        <div *ngFor="let address of myForm.get('addresses').controls; let i=index" 
+                    class="panel panel-default">
+            <div [formGroupName]="i">
+                
+                    <input formControlName="city" placeholder="city" value="">
+<!--                     
+                    <span *ngIf="myForm.get('addresses').length > 1">
+                        <button type="button" (click)="removeAddress(i)">Delete</button></span> -->
+                        <button class="btn btn-danger" type="button" (click)="removeAddress(i)">Delete</button>
+                
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+    <button (click)="addAddress()" type="button" style="cursor: default"> Add +</button>
+</form>

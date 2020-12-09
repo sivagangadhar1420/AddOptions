@@ -1,0 +1,19 @@
+<div class="container">
+    <form action="" [formGroup]="empForm" (ngSubmit)="onSubmit(empForm.value)" novalidate>
+       
+        <button type="button" (click)="addOptionsButton()">AddOptions</button>
+        <div formArrayName="inpArray">
+            <div *ngFor="let res of inpArray.controls;let i=index">
+                <input type="text" [formControlName]="i">
+                <button type="button" (click)="deletOptions(i)">Delete</button>
+                
+            </div>
+        </div>
+        <br>
+
+    
+<button type="submit" class="btn btn-primary">Submit </button>
+
+        
+    </form>
+</div>
