@@ -1,3 +1,11 @@
+
+
+<h4>Options Are</h4>
+<div *ngFor="let res of result;let i=index">
+   Options are : {{res.value}}
+</div>
+
+
 <form [formGroup]="myForm" (ngSubmit)="onSumit(myForm.value)" novalidate>
     <div formArrayName="addresses">
         <div *ngFor="let address of myForm.get('addresses').controls; let i=index" 
