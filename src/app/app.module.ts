@@ -11,6 +11,7 @@ import { DrugsDetailsComponent } from './drugs-details/drugs-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddOptionsComponent } from './add-options/add-options.component';
 import { AddOptionsAndQuestionsComponent } from './add-options-and-questions/add-options-and-questions.component';
+import { SharedService } from './shared.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { AddOptionsAndQuestionsComponent } from './add-options-and-questions/add
     AppRoutingModule, 
     ReactiveFormsModule,FormsModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -79,6 +79,7 @@ this.res11[i].address = this.address;
 
 delete(ind){
 this.res11.splice(ind, 1);
+// this.res11.removeAt(ind);
 }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-add-options',
@@ -8,7 +9,7 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class AddOptionsComponent implements OnInit {
 empForm:FormGroup;
-  constructor(private _fb:FormBuilder) { }
+  constructor(private _fb:FormBuilder, private _sharedservice:SharedService) { }
 
   ngOnInit() {
     this.empForm = this._fb.group({
@@ -26,10 +27,17 @@ empForm:FormGroup;
    
   }
 
+  deletOptions(ind:any){
+    const res=this.inpArray;
+    res.removeAt(ind,1);
+  
+  }
+
   onSubmit(val:any){
 
-    const res = this.empForm.get('inpArray');
-    console.log(res.value);
+    const res = this.empForm.get('inpArray').value;
+this._sharedservice.sendOptions(res);
+    // console.log(res);
 
 
   }
