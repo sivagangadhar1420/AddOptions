@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatCheckboxModule, MatRadioButton, MatRadioModule } from '@angular/material';
 import { AddRadioCheckBoxesComponent } from './add-radio-check-boxes/add-radio-check-boxes.component';
 import { PrintingAssessmentComponent } from './printing-assessment/printing-assessment.component';
+import { StrikeOffComponent } from './strike-off/strike-off.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PrintingAssessmentComponent } from './printing-assessment/printing-asse
     AddOptionsComponent,
     AddOptionsAndQuestionsComponent,
     AddRadioCheckBoxesComponent,
-    PrintingAssessmentComponent
+    PrintingAssessmentComponent,
+    StrikeOffComponent
   ],
   imports: [
     BrowserModule,

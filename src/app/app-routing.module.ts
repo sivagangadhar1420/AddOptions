@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
 import { PrescribersDetailsComponent } from './prescribers-details/prescribers-details.component';
 import { PrintingAssessmentComponent } from './printing-assessment/printing-assessment.component';
+import { StrikeOffComponent } from './strike-off/strike-off.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:'addoptions', component:AddOptionsComponent},
   {path:'addoptionsquestions', component:AddOptionsAndQuestionsComponent},
   {path:'addradiocheckboxes', component:AddRadioCheckBoxesComponent},
-  {path:'assessmentresult', component:PrintingAssessmentComponent}
+  {path:'assessmentresult', component:PrintingAssessmentComponent},
+  {path:'strikeoff', component:StrikeOffComponent}
 ];
 
 @NgModule({
