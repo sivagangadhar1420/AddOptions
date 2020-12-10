@@ -1,19 +1,49 @@
+
 <div class="container">
+        
     <form action="" [formGroup]="empForm" (ngSubmit)="onSubmit(empForm.value)" novalidate>
-       
-        <button type="button" (click)="addOptionsButton()">AddOptions</button>
-        <div formArrayName="inpArray">
-            <div *ngFor="let res of inpArray.controls;let i=index">
-                <input type="text" [formControlName]="i">
-                <button type="button" (click)="deletOptions(i)">Delete</button>
-                
-            </div>
+        
+    <div class="col-md-5">
+          <div class="form-group">
+             <select name="" id="" class="form-control" formControlName="questionType">
+                   <option value="" selected disabled>Select</option>
+                   <option value="MultipleChoice">MultipleChoice</option>
+                   <option value="SingleChoice">SingleChoice</option>
+            </select>
         </div>
+    </div>
+
+        <button type="button" (click)="addOptionsButton()">AddOptions</button>
+
+        <div *ngIf="empForm.get('questionType').value === 'SingleChoice'">
+            <div formArrayName="inpArray">
+                    <div *ngFor="let res of inpArray.controls;let i=index">
+                         <input type="text" [formControlName]="i">
+                          <button type="button" (click)="deletOptions(i)">Delete</button>
+                         <h5> Values of Text Filed   : </h5>{{res.value}}
+            </div>            
+        </div>
+    </div>
+
+
         <br>
 
-    
-<button type="submit" class="btn btn-primary">Submit </button>
+                                                    <!-- Check Boxes -->
 
-        
+        <!-- <div *ngIf="empForm.get('questionType').value === 'MultipleChoice'">
+            <h5>From Multiple Choices</h5>
+            <div formArrayName="inpArray1">
+                    <div *ngFor="let res of inpArray1.controls;let i=index">
+                         <input type="text" [formControlName]="i">
+                          <button type="button" (click)="deletOptions(i)">Delete</button> -->
+                          <!-- {{res.value}} -->
+            <!-- </div>            
+        </div>
+    </div> -->
+
+                            <!-- End -->
+
+    <button type="submit" class="btn btn-primary">Submit </button>
+  
     </form>
 </div>

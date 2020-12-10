@@ -1,0 +1,18 @@
+<div class="container">
+                            <!-- For Radio Buttons -->
+
+    <div *ngFor="let res of finalResult;let i=index">
+        <input type="radio" name="" id="" [value]="res" [(ngModel)]="radioSelected">
+<label for="" >{{res}}</label>
+    </div>
+ <h4>  {{radioSelected}}  </h4>  
+
+
+ <div *ngFor="let res1 of finalCheckResult;let i=index">
+     <input type="checkbox" name="" id="" [(ngModel)]="res">
+
+     <h5>{{res1}}</h5>
+ </div>
+
+
+</div>

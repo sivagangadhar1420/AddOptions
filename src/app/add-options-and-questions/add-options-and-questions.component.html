@@ -1,9 +1,92 @@
 
 
-<h4>Options Are</h4>
-<div *ngFor="let res of result;let i=index">
-   Options are : {{res.value}}
+
+
+<div>
+    <ul class="list-group">
+          <li class="list-group-item"  *ngFor="let item of resultArray1;let i=index">
+            <input type="checkbox"  name="list_name" value="{{item}}" [(ngModel)]="radioSelected" /> 
+            <label [attr.for]="'r1'+i" class="label-control">{{item}}</label>
+        </li>
+        <h5>Options are :{{radioSelected}}</h5>
+    </ul>
 </div>
+
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+                            <!-- 1 Process start -->
+
+<!-- <div>
+    <ul class="list-group">
+          <li class="list-group-item"  *ngFor="let item of reesultArray;let i=index">
+            <input type="radio" [(ngModel)]="radioSelected" [id]="'r1'+i" name="list_name" value="{{item}}" (change)="onItemChange(item)"/> 
+            <label [attr.for]="'r1'+i" class="label-control">{{item}}</label>
+        </li>
+        <h5>Options are :{{radioSelected}}</h5>
+    </ul>
+</div> -->
+                
+                                    <!-- 1 Process End -->
+                                    
+                                    
+                                    <!-- OR -->
+
+                                <!-- 2 Process Start -->
+
+
+    <!-- <div>
+    <ol>
+          <li *ngFor="let item of reesultArray;let i=index">
+           <strong>  {{i+1}}  ) &nbsp; &nbsp;</strong> 
+            <input type="radio" name="list" [id]="'r1'+i" value="{{item}}" [(ngModel)]="radioSelected"/>
+            <label [attr.for]="'r1'+i" class="label-control">&nbsp;&nbsp;{{item}}</label>
+        </li>
+        <h5>Options are :{{radioSelected}}</h5>
+    </ol>
+</div> -->
+          
+                                        <!-- 2 Process End -->
+            
+  
+                                         <!-- OR -->
+                                
+                                         <!-- 3rd Process Start -->
+ 
+<!-- <mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="res1">
+    <mat-radio-button class="example-radio-button" *ngFor="let res of reesultArray;let i=index" [value]="res">
+    {{res}}
+  </mat-radio-button>
+  <br>
+  {{res1}}
+</mat-radio-group>  -->
+
+
+
+                                                <!-- 3rd Process End -->
+
+                                               
+                                                <!-- OR -->
+
+                                                
+                                            <!-- 4th Process Start -->
+
+ <!-- <mat-radio-group  aria-labelledby="example-radio-group-label"  class="example-radio-group"  [(ngModel)]="res1">
+            <mat-radio-button class="example-radio-button" 
+                              *ngFor="let season of reesultArray; let i=index"
+                               [value]="season">
+                        {{season}}
+            </mat-radio-button>
+ </mat-radio-group>
+<br>
+{{res1}} -->
+  
+                                            <!-- 4th Process End -->
+
+
 
 
 <form [formGroup]="myForm" (ngSubmit)="onSumit(myForm.value)" novalidate>
@@ -13,9 +96,10 @@
             <div [formGroupName]="i">
                 
                     <input formControlName="city" placeholder="city" value="">
-<!--                     
+                <!--                     
                     <span *ngIf="myForm.get('addresses').length > 1">
                         <button type="button" (click)="removeAddress(i)">Delete</button></span> -->
+
                         <button class="btn btn-danger" type="button" (click)="removeAddress(i)">Delete</button>
                 
                     </div>

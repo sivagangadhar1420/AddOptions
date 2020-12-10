@@ -1,0 +1,41 @@
+<div class="container">
+    <form action="" [formGroup]="empForm" (ngSubmit)="onSubmit(empForm.value)" novalidate>
+        
+<div class="form-group col-md-2">
+
+    <select name="" id="" class="form-control" formControlName="questionType">
+            <option value="" selected disabled>Select</option>
+            <option value="MultipleChoice">MultipleChoice</option>
+            <option value="SingleChoice">SingleChoice</option>
+     </select>
+</div>
+
+<div *ngIf="empForm.get('questionType').value === 'MultipleChoice'">
+    <button (click)="addCheckBoxes()" type="button" class="btn btn-primary">AddCheckBoxes</button>
+
+    <div formArrayName="checkArray">
+        <div *ngFor="let res of checkArray.controls;let i=index">
+             <input type="text" [formControlName]="i">
+              <button type="button" (click)="deleteCheckBoxes(i)">Delete</button>
+              <!-- {{res.value}} -->
+        </div>            
+    </div>
+</div>
+
+
+<div *ngIf="empForm.get('questionType').value === 'SingleChoice'">
+    <button (click)="addRadioButtons()" type="button" class="btn btn-primary">AddRadioButtons</button>
+
+    <div formArrayName="radioArray">
+        <div *ngFor="let res of radioArray.controls;let i=index">
+             <input type="text" [formControlName]="i">
+              <button type="button" (click)="deleteRadiobuttons(i)">Delete</button>
+              <!-- {{res.value}} -->
+        </div>            
+    </div>
+</div>
+
+<button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+</div>

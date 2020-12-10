@@ -12,6 +12,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddOptionsComponent } from './add-options/add-options.component';
 import { AddOptionsAndQuestionsComponent } from './add-options-and-questions/add-options-and-questions.component';
 import { SharedService } from './shared.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCardModule, MatCheckboxModule, MatRadioButton, MatRadioModule } from '@angular/material';
+import { AddRadioCheckBoxesComponent } from './add-radio-check-boxes/add-radio-check-boxes.component';
+import { PrintingAssessmentComponent } from './printing-assessment/printing-assessment.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +26,15 @@ import { SharedService } from './shared.service';
     PrescribersDetailsComponent,
     DrugsDetailsComponent,
     AddOptionsComponent,
-    AddOptionsAndQuestionsComponent
+    AddOptionsAndQuestionsComponent,
+    AddRadioCheckBoxesComponent,
+    PrintingAssessmentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    ReactiveFormsModule,FormsModule
+    ReactiveFormsModule,FormsModule, BrowserAnimationsModule,
+     MatCardModule,MatCheckboxModule, MatButtonModule , MatRadioModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
